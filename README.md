@@ -1,6 +1,6 @@
 # covid19-mexico
 
-> A PWA to show the covid 19 state in Mexico.
+> A progressive web application to know the last numbers of covid19 cases in Mexico.
 
 ## Build Setup
 
