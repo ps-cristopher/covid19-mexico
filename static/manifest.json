@@ -1,0 +1,21 @@
+{
+	"short_name": "Covid19 México",
+	"name": "Covid19-MX",
+	"icons": [
+		{
+			"src": "/static/img/app-icon-sm.png",
+			"type": "image/png",
+			"sizes": "192x192"
+		},
+		{
+			"src": "/static/img/app-icon.png",
+			"type": "image/png",
+			"sizes": "512x512"
+		}
+	],
+	"start_url": "/?utm_source=a2hs",
+	"background_color": "#222f36",
+	"display": "standalone",
+	"scope": "/",
+	"theme_color": "#f1d300"
+}
