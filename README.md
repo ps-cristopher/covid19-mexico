@@ -2,6 +2,8 @@
 
 > A progressive web application to know the last numbers of covid19 cases in Mexico.
 
+> You can see it in action here -> https://covid19mexico.cristopherps.com/
+
 ## Build Setup
 
 ``` bash
