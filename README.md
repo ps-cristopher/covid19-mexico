@@ -1,6 +1,8 @@
 # covid19-mexico
 
-> A progressive web application to know the last numbers of covid19 cases in Mexico.
+> A progressive web application to know the state of covid19 in Mexico.
+
+> You can see it in action here -> https://covid19mexico.cristopherps.com/
 
 ## Build Setup
 
