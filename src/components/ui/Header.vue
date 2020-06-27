@@ -1,8 +1,5 @@
 <template lang="html">
 	<header>
-		<div class="alert alert-danger mb-0 mt-0 pt-0 pb-0 text-center">
-			<strong>¡Versión de desarrollo!. Datos falsos.</strong>
-		</div>
 		<div class="navbar navbar-dark navbar-top bg-dark">
 			<a href="/" class="navbar-brand d-flex align-items-center">
 				<img
@@ -13,7 +10,7 @@
 				/>
 			</a>
 			<span class="navbar-text text-white">
-				<h3>COVID 19 México</h3>
+				<h3>COVID 19 México 🇲🇽</h3>
 			</span>
 			<form class="form-inline my-2 my-lg-0">
 				<a
@@ -209,6 +206,9 @@
 				</li>
 			</ul>
 		</nav>
+		<div class="alert alert-danger mb-0 mt-0 pt-0 pb-0 text-center">
+			<strong>API en desarrollo. ¡Datos falsos!.</strong>
+		</div>
 	</header>
 </template>
 
