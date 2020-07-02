@@ -20,6 +20,57 @@ export default {
 			chart: null
 		};
 	},
+	computed: {
+		mexico() {
+			return this.$store.state.mexico;
+		},
+		mexicoStates() {
+			return this.$store.state.mexicoStates;
+		},
+		mexicoTimeline() {
+			return this.$store.state.mexicoTimeline;
+		},
+		mexicoStatesTimeline() {
+			return this.$store.state.mexicoStatesTimeline.map((date) => {
+				let confirmed = date.list[0].confirmed;
+				let deaths = date.list[0].deaths;
+				let recovered = date.list[0].recovered;
+				date.list = date.list.map((state, index) => {
+					state.confirmed = confirmed * 2;
+					state.deaths = deaths * 2;
+					state.recovered = recovered * 2;
+					confirmed = state.confirmed;
+					deaths = state.deaths;
+					recovered = state.recovered;
+					console.log(state);
+					return state;
+				});
+				return date;
+			});
+		}
+	},
+	methods: {
+		getSlideData(indexParam) {
+			let index = indexParam;
+			// function that returns current slide
+			// if index is not set, get last slide
+			if (index == undefined) {
+				index = this.mexicoStatesTimeline.length - 1;
+			}
+
+			var data = this.mexicoStatesTimeline[index];
+
+			// augment with names
+			for (var i = 0; i < data.list.length; i++) {
+				data.list[i].name = data.list[i].id;
+			}
+			return data;
+		}
+	},
+	beforeDestroy() {
+		if (this.chart !== null) this.chart.dispose();
+		this.chart = null;
+	},
 	mounted() {
 		am4core.ready(() => {
 			var backgroundColor = am4core.color('#ffffff');
@@ -969,42 +1020,6 @@ export default {
 
 			this.chart = container;
 		});
-	},
-	beforeDestroy() {
-		if (this.chart !== null) this.chart.dispose();
-		this.chart = null;
-	},
-	computed: {
-		mexico() {
-			return this.$store.state.mexico;
-		},
-		mexicoStates() {
-			return this.$store.state.mexicoStates;
-		},
-		mexicoTimeline() {
-			return this.$store.state.mexicoTimeline;
-		},
-		mexicoStatesTimeline() {
-			return this.$store.state.mexicoStatesTimeline;
-		}
-	},
-	methods: {
-		getSlideData(indexParam) {
-			let index = indexParam;
-			// function that returns current slide
-			// if index is not set, get last slide
-			if (index == undefined) {
-				index = this.mexicoStatesTimeline.length - 1;
-			}
-
-			var data = this.mexicoStatesTimeline[index];
-
-			// augment with names
-			for (var i = 0; i < data.list.length; i++) {
-				data.list[i].name = data.list[i].id;
-			}
-			return data;
-		}
 	}
 };
 </script>
