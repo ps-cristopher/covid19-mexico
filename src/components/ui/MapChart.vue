@@ -31,22 +31,7 @@ export default {
 			return this.$store.state.mexicoTimeline;
 		},
 		mexicoStatesTimeline() {
-			return this.$store.state.mexicoStatesTimeline.map((date) => {
-				let confirmed = date.list[0].confirmed;
-				let deaths = date.list[0].deaths;
-				let recovered = date.list[0].recovered;
-				date.list = date.list.map((state, index) => {
-					state.confirmed = confirmed * 2;
-					state.deaths = deaths * 2;
-					state.recovered = recovered * 2;
-					confirmed = state.confirmed;
-					deaths = state.deaths;
-					recovered = state.recovered;
-					console.log(state);
-					return state;
-				});
-				return date;
-			});
+			return this.$store.state.mexicoStatesTimeline;
 		}
 	},
 	methods: {
