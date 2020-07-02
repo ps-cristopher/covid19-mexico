@@ -37,7 +37,7 @@
 
 		<!-- <hr class="mt-0 mb-0" style="border: 0.5px solid rgb(255, 255, 255, 1);background-color:"> -->
 
-		<transition name="fade" mode="out-in">
+		<transition name="fade">
 			<div
 				class="navbar navbar-dark bg-dark shadow-sm"
 				id="navbarHeader"
