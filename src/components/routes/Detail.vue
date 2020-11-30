@@ -90,7 +90,7 @@
 							<th
 								v-for="(header, headerKey) in tableFields"
 								:key="`row-${headerKey}`"
-								:class="`text-center text-white th-header ${header.class}`"
+								:class="`text-center text-white th-header ${header.class} ${headerKey == 'id' ? 'sticky' : ''}`"
 								@click="sortData(headerKey)"
 							>
 								{{ header.label }}
@@ -105,21 +105,21 @@
 					<transition-group tag="tbody" name="slide-up" mode="in-out" appear>
 						<tr v-for="row in rowsToRender" :key="row.id">
 							<th
-								class="table-light text-center text-muted"
+								class="table-light text-center text-muted th-row"
 								style="white-space: nowrap;"
 							>
 								{{ row.name }}
 							</th>
-							<td class="table-secondary text-center text-muted text-monospace">
+							<td class="table-secondary text-center text-muted text-monospace td-row">
 								{{ row.confirmed }}
 							</td>
-							<td class="table-warning text-center text-muted text-monospace">
+							<td class="table-warning text-center text-muted text-monospace td-row">
 								{{ row.active }}
 							</td>
-							<td class="table-danger text-center text-muted text-monospace">
+							<td class="table-danger text-center text-muted text-monospace td-row">
 								{{ row.deaths }}
 							</td>
-							<td class="table-success text-center text-muted text-monospace">
+							<td class="table-success text-center text-muted text-monospace td-row">
 								{{ row.recovered }}
 							</td>
 						</tr>
